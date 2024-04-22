@@ -3,6 +3,7 @@ from gtts import gTTS
 from playsound import playsound
 import os
 import time
+from logger import logger
 
 
 class Alicia:
@@ -65,7 +66,7 @@ class Alicia:
             try:
                 tts.save(file_path)
             except:
-                print("last_command file save error")
+                logger.error("last_command file save error")
 
         playsound(file_path)
 
@@ -81,20 +82,20 @@ class Alicia:
 
             if any(word in txt for word in ["um", "1"]):
                 self.callback = ["default", 1]
-                print("order 1")
+                logger.info("order 1")
 
             if any(word in txt for word in ["dois", "2"]):
                 self.callback = ["default", 2]
-                print("order 2")
+                logger.info("order 2")
 
             if any(word in txt for word in ["três", "3"]):
                 self.callback = ["default", 3]
-                print("order 3")
+                logger.info("order 3")
 
         else:
             return self.microphone_listen()
 
-        print(txt)
+        logger.info("text_tracer", text=txt)
 
 
 ali = Alicia()
