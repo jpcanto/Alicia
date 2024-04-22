@@ -2,3 +2,4 @@ venv
 venv310
 venv312
 audios/**/*
+__pycache__
