@@ -23,7 +23,7 @@ class Alicia:
         self.create_environment()
         self.loop()
 
-    def create_environment():
+    def create_environment(self):
         audio_folder = "audios"
 
         if not os.path.exists(audio_folder):
