@@ -1,0 +1,4 @@
+gTTS  # GOOGLE TEXT TO SPEECH API
+playsound==1.2.2  # mp3 file player
+PyAudio  # voice recognition
+SpeechRecognition # voice recognition
