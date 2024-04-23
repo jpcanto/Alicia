@@ -5,4 +5,5 @@ config = {
     "GMAIL_PASS": environ.get("GMAIL_PASSWORD", "password"),
     "GMAIL_USR": environ.get("GMAIL_USER", "email"),
     "PHONE_NUMBER": environ.get("PHONE_NUMBER", "whatsappnumber"),
+    "LOCAL_APPDATA": environ.get("LOCALAPPDATA", ""),
 }
