@@ -31,8 +31,6 @@ class Ifood:
         self.run()
 
     def run(self):
-        # def open_ifood(self):
-        print(self.password)
         chrome_options = sl_opts()
         # chrome_options.add_argument("--headless")
 
@@ -122,6 +120,7 @@ class Ifood:
                 sl_by.XPATH, "//*[contains(text(), 'Qual é o número do seu celular?')]"
             )
             self.driver.find_element(sl_by.NAME, "phoneNumber").send_keys(self.phone)
+            time.sleep(1)
             self.driver.find_element(
                 sl_by.XPATH, "//label[contains(text(), 'WhatApp')]"
             ).click()
