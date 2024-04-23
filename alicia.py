@@ -21,7 +21,6 @@ class Alicia:
         self.callback = []
 
         self.create_environment()
-        self.loop()
 
     def create_environment(self):
         audio_folder = "audios"
