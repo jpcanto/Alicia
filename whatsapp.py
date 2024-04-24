@@ -28,7 +28,7 @@ class Whatsapp:
     def init_driver(self, login_needed=False):
         chrome_options = sl_opts()
         chrome_options.add_argument(f"user-data-dir={self.chrome_user_data}")
-        
+
         logger.info("iniciando driver", login_needed=login_needed)
 
         if not login_needed:
@@ -41,7 +41,7 @@ class Whatsapp:
 
     def do_login(self):
         login_needed = True
-        
+
         logger.info("doing_login")
 
         while True:
@@ -71,10 +71,14 @@ class Whatsapp:
             except:
                 continue
 
-        messages_in = self.driver.find_elements(sl_by.CSS_SELECTOR, ".message-in")
+        messages_in = self.driver.find_elements(
+            sl_by.CSS_SELECTOR, ".message-in ._ao3e.selectable-text strong"
+        )
         last_message_in = messages_in[-1]
+        code = last_message_in.text
 
-        logger.info("last message", message=last_message_in)
+        logger.info("last message", code=code)
+        return code
 
 
 w = Whatsapp()
